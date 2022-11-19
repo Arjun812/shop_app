@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shop_app/pages/homePage/viewModel/home_page_cubit.dart';
+import 'package:shop_app/services/arguments.dart';
 import 'package:shop_app/utils/gifs.dart';
 import 'package:shop_app/widgets/app_bar.dart';
 import 'package:shop_app/widgets/product_card.dart';
@@ -56,7 +57,7 @@ class _HomePageState extends State<HomePage> {
                         itemBuilder: (context, index) =>
                             ProductCard(
                               onTap: (){
-
+                                Navigator.of(context).pushNamed('singleProduct',arguments: SingleProductArgs(state.model!.products![index]));
                               },
                               pid:state.model!.products![index].id.toString(),
                               title: state.model!.products![index].title,
