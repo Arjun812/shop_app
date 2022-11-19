@@ -38,7 +38,15 @@ class _ProductCardState extends State<ProductCard> {
       child: InkWell(
         onTap: widget.onTap,
         child: Container(
-
+            decoration:  BoxDecoration(
+            color: Colors.white,
+            boxShadow: [  BoxShadow(
+              color: Colors.black.withOpacity(0.1),
+              spreadRadius: 1,
+              blurRadius: 2,
+              offset: Offset(3, 3),
+            ),]
+        ),
           margin: EdgeInsets.all(0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,

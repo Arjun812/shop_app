@@ -5,6 +5,8 @@ import 'package:shop_app/utils/gifs.dart';
 import 'package:shop_app/widgets/app_bar.dart';
 import 'package:shop_app/widgets/product_card.dart';
 
+import '../../../utils/styles.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -42,8 +44,9 @@ class _HomePageState extends State<HomePage> {
                     return GridView.builder(
                         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                           childAspectRatio: 3 / 4,
-                          mainAxisSpacing: 2,
-                          crossAxisSpacing: 2,
+
+                          mainAxisSpacing: 6,
+                          crossAxisSpacing: 6,
                           mainAxisExtent: 170,
                           crossAxisCount: 2,
                         ),
@@ -52,6 +55,9 @@ class _HomePageState extends State<HomePage> {
                         primary: false,
                         itemBuilder: (context, index) =>
                             ProductCard(
+                              onTap: (){
+
+                              },
                               pid:state.model!.products![index].id.toString(),
                               title: state.model!.products![index].title,
                               cost: state.model!.products![index].price.toString(),
